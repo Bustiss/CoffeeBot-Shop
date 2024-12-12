@@ -8,49 +8,15 @@
 </head>
 <body>
   <div class="container">
-    <h1>Welcome to B's Cafe!</h1>
-    <form action="/order" method="POST">
-      <label for="name">What's your name?</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="size">What size drink can I get for you?</label>
-      <select id="size" name="size" required>
-        <option value="small">Small</option>
-        <option value="medium">Medium</option>
-        <option value="large">Large</option>
-      </select>
-
-      <label for="temp">Would you like your drink hot or iced?</label>
-      <select id="temp" name="temp" required>
-        <option value="hot">Hot</option>
-        <option value="iced">Iced</option>
-      </select>
-
-      <label for="drink_type">What type of drink would you like?</label>
-      <select id="drink_type" name="drink_type" required>
-        <option value="Brewed Coffee">Brewed Coffee</option>
-        <option value="Mocha">Mocha</option>
-        <option value="latte">Latte</option>
-      </select>
-
-      <div id="milk-options" style="display: none;">
-        <label for="milk">What kind of milk for your latte?</label>
-        <select id="milk" name="milk">
-          <option value="2% milk">2% milk</option>
-          <option value="non-fat">Non-fat milk</option>
-          <option value="soy">Soy milk</option>
-        </select>
-      </div>
-
-      <label for="cup">Would you like a plastic cup or reusable cup?</label>
-      <select id="cup" name="cup" required>
-        <option value="plastic cup">Plastic Cup</option>
-        <option value="reusable cup">Reusable Cup</option>
-      </select>
-
-      <button type="submit">Place Order</button>
-    </form>
+    <h1>Welcome to B's Coffee!</h1>
+    <div id="chatbox">
+      <div class="message bot">Hi! How can I help you today?</div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type your message here...">
+    <button id="send-btn">Send</button>
   </div>
 
+  
 </body>
 </html>
+
