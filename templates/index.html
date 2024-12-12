@@ -10,13 +10,54 @@
   <div class="container">
     <h1>Welcome to B's Coffee!</h1>
     <div id="chatbox">
-      <div class="message bot">Hi! How can I help you today?</div>
+      
     </div>
     <input type="text" id="user-input" placeholder="Type your message here...">
     <button id="send-btn">Send</button>
   </div>
 
-  
+  <script>
+    const chatbox = document.getElementById('chatbox');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    const addMessage = (message, sender) => {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `message ${sender}`;
+      msgDiv.innerText = message;
+      chatbox.appendChild(msgDiv);
+      chatbox.scrollTop = chatbox.scrollHeight; // Scroll to the bottom
+    };
+
+    sendBtn.addEventListener('click', async () => {
+      const userMessage = userInput.value;
+      if (!userMessage) return;
+
+      // Display user's message
+      addMessage(userMessage, 'user');
+      userInput.value = '';
+
+      // Send message to the backend
+      const response = await fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: userMessage }),
+      });
+
+      const data = await response.json();
+      const botResponse = data.bot_response;
+
+      // Display bot's response
+      addMessage(botResponse, 'bot');
+    });
+
+    // Allow pressing Enter to send a message
+    userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        sendBtn.click();
+      }
+    });
+  </script>
 </body>
 </html>
 
