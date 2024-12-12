@@ -1,16 +1,17 @@
 body {
+    background: url('../images/coffe\ shop.jpg') no-repeat center center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
+}
   
   .container {
-    background: #fff;
+    background: #ffffff32;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -20,17 +21,22 @@ body {
   
   h1 {
     text-align: center;
-    color: #333;
-  }
+    color: #ffffff;
+    text-shadow: 
+        -1px -2px 0 #000,  
+         1px -2px 0 #000,
+        -2px  1px 0 #000,
+         1px  1px 0 #000; 
+}
   
   #chatbox {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 8px;
     height: 300px;
     overflow-y: auto;
     padding: 10px;
     margin-bottom: 15px;
-    background: #f9f9f9;
+    background: #f9f9f900;
   }
   
   .message {
